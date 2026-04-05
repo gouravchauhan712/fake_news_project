@@ -1,5 +1,3 @@
-nltk.download('punkt')
-nltk.download('stopwords')
 # =========================
 # 1. IMPORT LIBRARIES
 # =========================
@@ -23,11 +21,19 @@ model = load_model()
 # =========================
 # 3. NLTK SETUP
 # =========================
-nltk.download('punkt')
-nltk.download('stopwords')
+import nltk
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 stop_words = set(stopwords.words('english'))
-
 # =========================
 # 4. CLEAN FUNCTION (SAME AS TRAINING)
 # =========================
