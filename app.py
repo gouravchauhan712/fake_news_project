@@ -40,7 +40,7 @@ stop_words = set(stopwords.words('english'))
 def clean_text(text):
     text = str(text).lower()
     text = re.sub(r'[^a-zA-Z]', ' ', text)
-    tokens = word_tokenize(text)
+    tokens = text.split()
     tokens = [w for w in tokens if w not in stop_words and len(w) > 2]
     return " ".join(tokens)
 
