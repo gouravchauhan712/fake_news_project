@@ -1,3 +1,5 @@
+nltk.download('punkt')
+nltk.download('stopwords')
 # =========================
 # 1. IMPORT LIBRARIES
 # =========================
